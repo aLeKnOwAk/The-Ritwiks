@@ -1,9 +1,18 @@
-<!-- required snowstorm JS, default behaviour -->
-<script src="snowstorm.js"></script>
+function sayThatWasEasy() {
+ 
+    var thatWasEasy = new Audio("hello.mp3");
+ 
+    thatWasEasy.play();
+}
 
-<!-- now, we'll customize the snowStorm object -->
-<script>
-snowStorm.snowColor = '#99ccff';   // blue-ish snow!?
-snowStorm.flakesMaxActive = 96;    // show more snow on screen at once
-snowStorm.useTwinkleEffect = true; // let the snow flicker in and out of view
-</script>
+$("#easy").on("click", sayThatWasEasy);
+
+$(document).keypress(delegateKeypress);
+
+function delegateKeypress(event) {
+ 
+    if (event.keyCode == 32) {
+ 
+        $("#easy").trigger("click");
+    }
+}
